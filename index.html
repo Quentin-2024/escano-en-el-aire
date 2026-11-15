@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>29N: el escaño en el aire</title>
+<meta name="description" content="Elige tu provincia y mira qué se juega el 29N: escaños, horquillas y el escaño en el aire.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="29N: el escaño en el aire">
+<meta property="og:title" content="29N: el escaño en el aire">
+<meta property="og:description" content="Elige tu provincia y mira qué se juega el 29N: escaños, horquillas y el escaño en el aire.">
+<link rel="canonical" href="https://escano-en-el-aire.pages.dev/">
+<meta property="og:url" content="https://escano-en-el-aire.pages.dev/">
+<meta property="og:image" content="https://escano-en-el-aire.pages.dev/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="29N: el escaño en el aire. Elige tu provincia y mira qué se juega.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="29N: el escaño en el aire">
+<meta name="twitter:description" content="Elige tu provincia y mira qué se juega el 29N.">
+<meta name="twitter:image" content="https://escano-en-el-aire.pages.dev/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314161a'/%3E%3Crect x='14' y='14' width='16' height='16' rx='3' fill='%23fff'/%3E%3Crect x='34' y='14' width='16' height='16' rx='3' fill='%23888'/%3E%3Crect x='14' y='34' width='16' height='16' rx='3' fill='%23888'/%3E%3Crect x='34' y='34' width='16' height='16' rx='3' fill='%23888'/%3E%3C/svg%3E">
+
+<style>
+:root{--bg:#f5f3ee;--ink:#14161a;--mut:#5d6470;--card:#fff;--line:#e2ded4;--acc:#14161a;
+--pp:#1d6fd1;--psoe:#d8262c;--vox:#5da61e;--sumar:#c2477f;--reg:#9a7a3c;--warn:#fff4d6;--warnb:#e6c875}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+#app{max-width:760px;margin:0 auto;padding:18px 14px 40px}
+h1{font:700 clamp(26px,7vw,38px)/1.1 Georgia,"Times New Roman",serif;margin:6px 0 8px;letter-spacing:-.01em}
+h2{font:700 20px/1.2 Georgia,serif;margin:0 0 6px}
+.lead{color:var(--mut);margin:0 0 14px}
+.tag{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.banner{background:var(--warn);border:1px solid var(--warnb);border-radius:10px;padding:10px 12px;margin:0 0 14px;font-size:14px}
+.tabs{display:flex;gap:6px;margin:0 0 14px;flex-wrap:wrap}
+.tabs button{flex:1 1 auto;min-width:0;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px 12px;border-radius:999px;font:600 14px system-ui;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--acc);color:#fff;border-color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:0 0 12px}
+select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;font:16px system-ui;background:#fff;color:var(--ink)}
+label{display:block;font-weight:600;margin:0 0 6px}
+.seatrow{margin:10px 0 2px}
+.seatrow .lbl{font-size:13px;color:var(--mut);margin:0 0 4px;display:flex;justify-content:space-between;gap:8px}
+.seats{display:flex;flex-wrap:wrap;gap:3px}
+.seat{width:16px;height:16px;border-radius:3px;display:inline-block}
+.seat.empty{background:#ece9e0}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:7px 4px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+th{font-size:12px;color:var(--mut);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+.big{font:700 30px/1 Georgia,serif}
+.gauge{height:12px;background:#ece9e0;border-radius:999px;overflow:hidden;margin:8px 0 4px}
+.gauge i{display:block;height:100%;background:var(--acc);border-radius:999px}
+.gscale{display:flex;justify-content:space-between;font-size:12px;color:var(--mut)}
+.pill{display:inline-block;padding:2px 9px;border-radius:999px;font:600 12px system-ui;background:var(--acc);color:#fff}
+.pill.a{background:#b3261e}.pill.b{background:#c97a00}.pill.c{background:#4b6b8a}.pill.d{background:#6b7280}
+ol.rank{list-style:none;margin:0;padding:0}
+ol.rank li{display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid var(--line);cursor:pointer}
+ol.rank li:hover{background:#faf8f3}
+ol.rank .n{width:24px;color:var(--mut);font-size:13px}
+ol.rank .t{flex:1;min-width:0}
+ol.rank .t b{display:block}
+ol.rank .t span{font-size:13px;color:var(--mut)}
+ol.rank .v{font:700 16px Georgia,serif;white-space:nowrap}
+.btn{border:1px solid var(--acc);background:var(--card);padding:10px 14px;border-radius:10px;font:600 14px system-ui;cursor:pointer;margin-top:10px}
+.note{font-size:13px;color:var(--mut)}
+.foot{font-size:12px;color:var(--mut);margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
+.hidden{display:none}
+.read{font-size:16px;margin:10px 0 0}
+</style>
+</head>
+<body>
+<div id="app">
+  <span class="tag">Elecciones generales · 29 de noviembre de 2026</span>
+  <h1>29N: el escaño en el aire</h1>
+  <p class="lead">Elige una provincia y mira cuántos diputados reparte el modelo, con su horquilla, y qué escaño está en el aire.</p>
+  <div id="veda" class="banner hidden"><b>Veda de sondeos.</b> Del 24 al 29 de noviembre la ley prohíbe publicar sondeos (art. 69.7 de la LOREG). Esta página solo muestra los resultados de 2023.</div>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" id="t-provincia" aria-selected="true" data-v="provincia">Mi provincia</button>
+    <button role="tab" id="t-ajustados" aria-selected="false" data-v="ajustados">Los más ajustados</button>
+    <button role="tab" id="t-espana" aria-selected="false" data-v="espana">España</button>
+  </div>
+
+  <section id="v-provincia">
+    <div class="card">
+      <label for="sel">Tu provincia</label>
+      <select id="sel"></select>
+    </div>
+    <div id="prov"></div>
+  </section>
+
+  <section id="v-ajustados" class="hidden">
+    <div class="card">
+      <h2>Los escaños más ajustados</h2>
+      <p class="note" style="margin:0 0 8px">Ordenadas por el margen del último escaño: cuantos menos puntos de voto lo separan de otro partido, más "en el aire". Toca una provincia para verla.</p>
+      <ol class="rank" id="rank"></ol>
+      <button class="btn" id="more">Ver todas</button>
+    </div>
+  </section>
+
+  <section id="v-espana" class="hidden">
+    <div class="card" id="esp"></div>
+  </section>
+
+  <p class="foot" id="foot"></p>
+</div>
+<script>
+(function(){
+"use strict";
+var DATA={"prov":[{"comunidad":"Madrid","provincia":"Madrid","diputados":38,"censo_2026":5536913,"cera_2026":498874,"pp_2023":16,"psoe_2023":10,"vox_2023":5,"sumar_2023":6,"reg_2023":0,"pp_base":16,"psoe_base":9,"vox_base":8,"sumar_base":5,"reg_base":0,"pp_prop":16,"psoe_prop":10,"vox_prop":9,"sumar_prop":3,"reg_prop":0,"ultimo":"PP","compite":"PSOE","vuelco_pts":0.97,"votos_vuelco":37353,"ppvox_p5":23,"ppvox_p95":27,"pp_prev":15,"psoe_prev":11,"vox_prev":9,"sumar_prev":3,"reg_prev":0,"pp_rng":"15–17","psoe_rng":"9–11","vox_rng":"8–10","sumar_rng":"3–4","reg_rng":"0","ppvox_rng":"24–26"},{"comunidad":"Asturias","provincia":"Asturias","diputados":7,"censo_2026":979077,"cera_2026":143588,"pp_2023":3,"psoe_2023":2,"vox_2023":1,"sumar_2023":1,"reg_2023":0,"pp_base":3,"psoe_base":2,"vox_base":1,"sumar_base":1,"reg_base":0,"pp_prop":3,"psoe_prop":3,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"PSOE","compite":"Vox","vuelco_pts":0.49,"votos_vuelco":2965,"ppvox_p5":4,"ppvox_p95":5,"pp_prev":3,"psoe_prev":3,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"3","psoe_rng":"2–3","vox_rng":"1–2","sumar_rng":"0","reg_rng":"0","ppvox_rng":"4–5"},{"comunidad":"País Vasco","provincia":"Araba/Álava","diputados":4,"censo_2026":267325,"cera_2026":10330,"pp_2023":1,"psoe_2023":1,"vox_2023":0,"sumar_2023":0,"reg_2023":2,"pp_base":1,"psoe_base":1,"vox_base":0,"sumar_base":0,"reg_base":2,"pp_prop":1,"psoe_prop":1,"vox_prop":0,"sumar_prop":0,"reg_prop":2,"ultimo":"PNV","compite":"PSOE","vuelco_pts":2.09,"votos_vuelco":3634,"ppvox_p5":0,"ppvox_p95":1,"pp_prev":1,"psoe_prev":1,"vox_prev":0,"sumar_prev":0,"reg_prev":2,"pp_rng":"1","psoe_rng":"1–2","vox_rng":"0","sumar_rng":"0","reg_rng":"1–2","ppvox_rng":"1"},{"comunidad":"País Vasco","provincia":"Bizkaia","diputados":8,"censo_2026":959702,"cera_2026":50401,"pp_2023":1,"psoe_2023":2,"vox_2023":0,"sumar_2023":1,"reg_2023":4,"pp_base":1,"psoe_base":2,"vox_base":0,"sumar_base":0,"reg_base":5,"pp_prop":1,"psoe_prop":2,"vox_prop":0,"sumar_prop":0,"reg_prop":5,"ultimo":"PNV","compite":"EH Bildu","vuelco_pts":0.79,"votos_vuelco":4833,"ppvox_p5":0,"ppvox_p95":1,"pp_prev":1,"psoe_prev":3,"vox_prev":0,"sumar_prev":0,"reg_prev":4,"pp_rng":"1","psoe_rng":"2–3","vox_rng":"0","sumar_rng":"0","reg_rng":"4–5","ppvox_rng":"1"},{"comunidad":"País Vasco","provincia":"Gipuzkoa","diputados":6,"censo_2026":597859,"cera_2026":35927,"pp_2023":0,"psoe_2023":2,"vox_2023":0,"sumar_2023":0,"reg_2023":4,"pp_base":0,"psoe_base":1,"vox_base":0,"sumar_base":0,"reg_base":5,"pp_prop":0,"psoe_prop":1,"vox_prop":0,"sumar_prop":0,"reg_prop":5,"ultimo":"PNV","compite":"PSOE","vuelco_pts":0.47,"votos_vuelco":1798,"ppvox_p5":0,"ppvox_p95":1,"pp_prev":0,"psoe_prev":2,"vox_prev":0,"sumar_prev":0,"reg_prev":4,"pp_rng":"0","psoe_rng":"1–2","vox_rng":"0","sumar_rng":"0","reg_rng":"4–5","ppvox_rng":"0"},{"comunidad":"Andalucía","provincia":"Almería","diputados":6,"censo_2026":541093,"cera_2026":53278,"pp_2023":3,"psoe_2023":2,"vox_2023":1,"sumar_2023":0,"reg_2023":0,"pp_base":3,"psoe_base":1,"vox_base":2,"sumar_base":0,"reg_base":0,"pp_prop":3,"psoe_prop":1,"vox_prop":2,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"PSOE","vuelco_pts":0.02,"votos_vuelco":75,"ppvox_p5":4,"ppvox_p95":5,"pp_prev":2,"psoe_prev":2,"vox_prev":2,"sumar_prev":0,"reg_prev":0,"pp_rng":"2–3","psoe_rng":"1–2","vox_rng":"2","sumar_rng":"0","reg_rng":"0","ppvox_rng":"4–5"},{"comunidad":"Andalucía","provincia":"Cádiz","diputados":8,"censo_2026":1042157,"cera_2026":35052,"pp_2023":4,"psoe_2023":3,"vox_2023":1,"sumar_2023":1,"reg_2023":0,"pp_base":3,"psoe_base":2,"vox_base":2,"sumar_base":1,"reg_base":0,"pp_prop":3,"psoe_prop":3,"vox_prop":2,"sumar_prop":0,"reg_prop":0,"ultimo":"PSOE","compite":"PP","vuelco_pts":2.78,"votos_vuelco":19076,"ppvox_p5":5,"ppvox_p95":6,"pp_prev":3,"psoe_prev":3,"vox_prev":2,"sumar_prev":0,"reg_prev":0,"pp_rng":"3","psoe_rng":"2–3","vox_rng":"2","sumar_rng":"0","reg_rng":"0","ppvox_rng":"5"},{"comunidad":"Andalucía","provincia":"Córdoba","diputados":6,"censo_2026":648792,"cera_2026":20911,"pp_2023":2,"psoe_2023":2,"vox_2023":1,"sumar_2023":1,"reg_2023":0,"pp_base":3,"psoe_base":2,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":3,"psoe_prop":2,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"Vox","vuelco_pts":1.31,"votos_vuelco":5587,"ppvox_p5":4,"ppvox_p95":4,"pp_prev":3,"psoe_prev":2,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"2–3","psoe_rng":"2","vox_rng":"1–2","sumar_rng":"0","reg_rng":"0","ppvox_rng":"4"},{"comunidad":"Andalucía","provincia":"Granada","diputados":7,"censo_2026":791066,"cera_2026":62425,"pp_2023":3,"psoe_2023":2,"vox_2023":1,"sumar_2023":1,"reg_2023":0,"pp_base":3,"psoe_base":2,"vox_base":2,"sumar_base":0,"reg_base":0,"pp_prop":3,"psoe_prop":2,"vox_prop":2,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"PSOE","vuelco_pts":2.81,"votos_vuelco":14145,"ppvox_p5":4,"ppvox_p95":5,"pp_prev":3,"psoe_prev":2,"vox_prev":2,"sumar_prev":0,"reg_prev":0,"pp_rng":"3","psoe_rng":"2","vox_rng":"2","sumar_rng":"0","reg_rng":"0","ppvox_rng":"5"},{"comunidad":"Andalucía","provincia":"Huelva","diputados":5,"censo_2026":408911,"cera_2026":9245,"pp_2023":2,"psoe_2023":2,"vox_2023":1,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":2,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":2,"psoe_prop":2,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"PSOE","compite":"PP","vuelco_pts":5.48,"votos_vuelco":14780,"ppvox_p5":3,"ppvox_p95":3,"pp_prev":2,"psoe_prev":2,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"2","psoe_rng":"2","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"3"},{"comunidad":"Andalucía","provincia":"Jaén","diputados":5,"censo_2026":515524,"cera_2026":14964,"pp_2023":2,"psoe_2023":2,"vox_2023":1,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":2,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":2,"psoe_prop":2,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"PSOE","compite":"PP","vuelco_pts":5.2,"votos_vuelco":17666,"ppvox_p5":3,"ppvox_p95":4,"pp_prev":2,"psoe_prev":2,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"2","psoe_rng":"2","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"3"},{"comunidad":"Andalucía","provincia":"Málaga","diputados":11,"censo_2026":1292972,"cera_2026":74033,"pp_2023":5,"psoe_2023":3,"vox_2023":2,"sumar_2023":1,"reg_2023":0,"pp_base":4,"psoe_base":3,"vox_base":3,"sumar_base":1,"reg_base":0,"pp_prop":5,"psoe_prop":3,"vox_prop":3,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"PSOE","vuelco_pts":1.11,"votos_vuelco":9492,"ppvox_p5":7,"ppvox_p95":8,"pp_prev":4,"psoe_prev":4,"vox_prev":3,"sumar_prev":0,"reg_prev":0,"pp_rng":"4–5","psoe_rng":"3–4","vox_rng":"3","sumar_rng":"0–1","reg_rng":"0","ppvox_rng":"7–8"},{"comunidad":"Andalucía","provincia":"Sevilla","diputados":12,"censo_2026":1606972,"cera_2026":43565,"pp_2023":4,"psoe_2023":5,"vox_2023":1,"sumar_2023":2,"reg_2023":0,"pp_base":4,"psoe_base":4,"vox_base":3,"sumar_base":1,"reg_base":0,"pp_prop":4,"psoe_prop":4,"vox_prop":3,"sumar_prop":1,"reg_prop":0,"ultimo":"Vox","compite":"PSOE","vuelco_pts":0.82,"votos_vuelco":8676,"ppvox_p5":6,"ppvox_p95":8,"pp_prev":4,"psoe_prev":5,"vox_prev":2,"sumar_prev":1,"reg_prev":0,"pp_rng":"4–5","psoe_rng":"4–5","vox_rng":"2–3","sumar_rng":"0–1","reg_rng":"0","ppvox_rng":"6–7"},{"comunidad":"Ceuta","provincia":"Ceuta","diputados":1,"censo_2026":65591,"cera_2026":3357,"pp_2023":1,"psoe_2023":0,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":1,"psoe_base":0,"vox_base":0,"sumar_base":0,"reg_base":0,"pp_prop":1,"psoe_prop":0,"vox_prop":0,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"Vox","vuelco_pts":0.1,"votos_vuelco":35,"ppvox_p5":1,"ppvox_p95":1,"pp_prev":0,"psoe_prev":0,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"0–1","psoe_rng":"0","vox_rng":"0–1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"1"},{"comunidad":"Melilla","provincia":"Melilla","diputados":1,"censo_2026":63968,"cera_2026":6879,"pp_2023":1,"psoe_2023":0,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":1,"psoe_base":0,"vox_base":0,"sumar_base":0,"reg_base":0,"pp_prop":1,"psoe_prop":0,"vox_prop":0,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"Vox","vuelco_pts":10.08,"votos_vuelco":2888,"ppvox_p5":1,"ppvox_p95":1,"pp_prev":1,"psoe_prev":0,"vox_prev":0,"sumar_prev":0,"reg_prev":0,"pp_rng":"1","psoe_rng":"0","vox_rng":"0","sumar_rng":"0","reg_rng":"0","ppvox_rng":"1"},{"comunidad":"La Rioja","provincia":"La Rioja","diputados":4,"censo_2026":259798,"cera_2026":21307,"pp_2023":2,"psoe_2023":2,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":2,"vox_base":0,"sumar_base":0,"reg_base":0,"pp_prop":2,"psoe_prop":2,"vox_prop":0,"sumar_prop":0,"reg_prop":0,"ultimo":"PSOE","compite":"Vox","vuelco_pts":0.37,"votos_vuelco":669,"ppvox_p5":2,"ppvox_p95":3,"pp_prev":2,"psoe_prev":2,"vox_prev":0,"sumar_prev":0,"reg_prev":0,"pp_rng":"2","psoe_rng":"1–2","vox_rng":"0–1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"2–3"},{"comunidad":"Castilla-La Mancha","provincia":"Albacete","diputados":4,"censo_2026":308541,"cera_2026":8961,"pp_2023":2,"psoe_2023":2,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":1,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":2,"psoe_prop":1,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"PSOE","vuelco_pts":3.46,"votos_vuelco":7615,"ppvox_p5":2,"ppvox_p95":3,"pp_prev":2,"psoe_prev":1,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"2","psoe_rng":"1","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"3"},{"comunidad":"Castilla-La Mancha","provincia":"Ciudad Real","diputados":5,"censo_2026":393421,"cera_2026":7808,"pp_2023":2,"psoe_2023":2,"vox_2023":1,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":2,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":2,"psoe_prop":2,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"PSOE","compite":"PP","vuelco_pts":3.53,"votos_vuelco":10055,"ppvox_p5":3,"ppvox_p95":4,"pp_prev":2,"psoe_prev":2,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"2","psoe_rng":"2","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"3"},{"comunidad":"Castilla-La Mancha","provincia":"Cuenca","diputados":3,"censo_2026":151410,"cera_2026":3703,"pp_2023":2,"psoe_2023":1,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":1,"psoe_base":1,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":1,"psoe_prop":1,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"Vox","compite":"PP","vuelco_pts":3.69,"votos_vuelco":4038,"ppvox_p5":2,"ppvox_p95":2,"pp_prev":1,"psoe_prev":1,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"1","psoe_rng":"1","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"2"},{"comunidad":"Castilla-La Mancha","provincia":"Guadalajara","diputados":3,"censo_2026":208773,"cera_2026":6227,"pp_2023":1,"psoe_2023":1,"vox_2023":1,"sumar_2023":0,"reg_2023":0,"pp_base":1,"psoe_base":1,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":1,"psoe_prop":1,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"PSOE","compite":"PP","vuelco_pts":7.92,"votos_vuelco":11943,"ppvox_p5":2,"ppvox_p95":2,"pp_prev":1,"psoe_prev":1,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"1","psoe_rng":"1","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"2"},{"comunidad":"Castilla-La Mancha","provincia":"Toledo","diputados":6,"censo_2026":569549,"cera_2026":15686,"pp_2023":3,"psoe_2023":2,"vox_2023":1,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":2,"vox_base":2,"sumar_base":0,"reg_base":0,"pp_prop":2,"psoe_prop":2,"vox_prop":2,"sumar_prop":0,"reg_prop":0,"ultimo":"PSOE","compite":"PP","vuelco_pts":3.02,"votos_vuelco":12436,"ppvox_p5":4,"ppvox_p95":5,"pp_prev":2,"psoe_prev":2,"vox_prev":2,"sumar_prev":0,"reg_prev":0,"pp_rng":"2","psoe_rng":"2","vox_rng":"2","sumar_rng":"0","reg_rng":"0","ppvox_rng":"4"},{"comunidad":"Galicia","provincia":"A Coruña","diputados":8,"censo_2026":1106690,"cera_2026":178478,"pp_2023":4,"psoe_2023":2,"vox_2023":0,"sumar_2023":1,"reg_2023":1,"pp_base":4,"psoe_base":2,"vox_base":0,"sumar_base":1,"reg_base":1,"pp_prop":4,"psoe_prop":3,"vox_prop":0,"sumar_prop":0,"reg_prop":1,"ultimo":"PSOE","compite":"PP","vuelco_pts":0.4,"votos_vuelco":2687,"ppvox_p5":4,"ppvox_p95":6,"pp_prev":4,"psoe_prev":3,"vox_prev":0,"sumar_prev":0,"reg_prev":1,"pp_rng":"4–5","psoe_rng":"2–3","vox_rng":"0–1","sumar_rng":"0","reg_rng":"0–1","ppvox_rng":"4–5"},{"comunidad":"Galicia","provincia":"Lugo","diputados":4,"censo_2026":341031,"cera_2026":76919,"pp_2023":3,"psoe_2023":1,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":3,"psoe_base":1,"vox_base":0,"sumar_base":0,"reg_base":0,"pp_prop":3,"psoe_prop":1,"vox_prop":0,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"PSOE","vuelco_pts":2.75,"votos_vuelco":6573,"ppvox_p5":2,"ppvox_p95":3,"pp_prev":3,"psoe_prev":1,"vox_prev":0,"sumar_prev":0,"reg_prev":0,"pp_rng":"3","psoe_rng":"1","vox_rng":"0","sumar_rng":"0","reg_rng":"0","ppvox_rng":"3"},{"comunidad":"Galicia","provincia":"Ourense","diputados":4,"censo_2026":360252,"cera_2026":111124,"pp_2023":3,"psoe_2023":1,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":3,"psoe_base":1,"vox_base":0,"sumar_base":0,"reg_base":0,"pp_prop":3,"psoe_prop":1,"vox_prop":0,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"PSOE","vuelco_pts":2.79,"votos_vuelco":5743,"ppvox_p5":2,"ppvox_p95":3,"pp_prev":3,"psoe_prev":1,"vox_prev":0,"sumar_prev":0,"reg_prev":0,"pp_rng":"3","psoe_rng":"1","vox_rng":"0","sumar_rng":"0","reg_rng":"0","ppvox_rng":"3"},{"comunidad":"Galicia","provincia":"Pontevedra","diputados":7,"censo_2026":926408,"cera_2026":150148,"pp_2023":3,"psoe_2023":3,"vox_2023":0,"sumar_2023":1,"reg_2023":0,"pp_base":3,"psoe_base":2,"vox_base":0,"sumar_base":1,"reg_base":1,"pp_prop":4,"psoe_prop":2,"vox_prop":0,"sumar_prop":0,"reg_prop":1,"ultimo":"PP","compite":"PSOE","vuelco_pts":0.08,"votos_vuelco":451,"ppvox_p5":3,"ppvox_p95":4,"pp_prev":3,"psoe_prev":3,"vox_prev":0,"sumar_prev":0,"reg_prev":1,"pp_rng":"3–4","psoe_rng":"2–3","vox_rng":"0","sumar_rng":"0","reg_rng":"0–1","ppvox_rng":"3–4"},{"comunidad":"Castilla y León","provincia":"Ávila","diputados":3,"censo_2026":136598,"cera_2026":9602,"pp_2023":2,"psoe_2023":1,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":1,"psoe_base":1,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":1,"psoe_prop":1,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"Vox","compite":"PP","vuelco_pts":2.24,"votos_vuelco":2109,"ppvox_p5":2,"ppvox_p95":3,"pp_prev":1,"psoe_prev":1,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"1–2","psoe_rng":"1","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"2"},{"comunidad":"Castilla y León","provincia":"Burgos","diputados":4,"censo_2026":300630,"cera_2026":22373,"pp_2023":2,"psoe_2023":2,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":1,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":2,"psoe_prop":1,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"PSOE","vuelco_pts":3.88,"votos_vuelco":7986,"ppvox_p5":2,"ppvox_p95":3,"pp_prev":2,"psoe_prev":1,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"2","psoe_rng":"1","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"3"},{"comunidad":"Castilla y León","provincia":"León","diputados":4,"censo_2026":425983,"cera_2026":55080,"pp_2023":2,"psoe_2023":2,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":1,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":2,"psoe_prop":1,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"PSOE","vuelco_pts":2.34,"votos_vuelco":6640,"ppvox_p5":2,"ppvox_p95":3,"pp_prev":1,"psoe_prev":2,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"2","psoe_rng":"1","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"3"},{"comunidad":"Castilla y León","provincia":"Palencia","diputados":3,"censo_2026":137466,"cera_2026":8737,"pp_2023":2,"psoe_2023":1,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":1,"vox_base":0,"sumar_base":0,"reg_base":0,"pp_prop":1,"psoe_prop":1,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"Vox","compite":"PP","vuelco_pts":0.22,"votos_vuelco":209,"ppvox_p5":2,"ppvox_p95":2,"pp_prev":1,"psoe_prev":1,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"1–2","psoe_rng":"1","vox_rng":"0–1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"2"},{"comunidad":"Castilla y León","provincia":"Salamanca","diputados":4,"censo_2026":304762,"cera_2026":36586,"pp_2023":3,"psoe_2023":1,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":1,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":2,"psoe_prop":1,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"PSOE","vuelco_pts":8.54,"votos_vuelco":17901,"ppvox_p5":3,"ppvox_p95":3,"pp_prev":2,"psoe_prev":1,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"2","psoe_rng":"1","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"3"},{"comunidad":"Castilla y León","provincia":"Segovia","diputados":3,"censo_2026":121460,"cera_2026":4178,"pp_2023":2,"psoe_2023":1,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":1,"vox_base":0,"sumar_base":0,"reg_base":0,"pp_prop":1,"psoe_prop":1,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"Vox","compite":"PP","vuelco_pts":0.53,"votos_vuelco":440,"ppvox_p5":2,"ppvox_p95":2,"pp_prev":1,"psoe_prev":1,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"1–2","psoe_rng":"1","vox_rng":"0–1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"2"},{"comunidad":"Castilla y León","provincia":"Soria","diputados":2,"censo_2026":77069,"cera_2026":9060,"pp_2023":1,"psoe_2023":1,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":1,"psoe_base":1,"vox_base":0,"sumar_base":0,"reg_base":0,"pp_prop":1,"psoe_prop":1,"vox_prop":0,"sumar_prop":0,"reg_prop":0,"ultimo":"PSOE","compite":"PP","vuelco_pts":5.03,"votos_vuelco":2666,"ppvox_p5":1,"ppvox_p95":1,"pp_prev":1,"psoe_prev":1,"vox_prev":0,"sumar_prev":0,"reg_prev":0,"pp_rng":"1","psoe_rng":"1","vox_rng":"0","sumar_rng":"0","reg_rng":"0","ppvox_rng":"1"},{"comunidad":"Castilla y León","provincia":"Valladolid","diputados":5,"censo_2026":440219,"cera_2026":17741,"pp_2023":2,"psoe_2023":2,"vox_2023":1,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":2,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":2,"psoe_prop":2,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"PSOE","compite":"PP","vuelco_pts":2.07,"votos_vuelco":6266,"ppvox_p5":3,"ppvox_p95":4,"pp_prev":2,"psoe_prev":2,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"2","psoe_rng":"1–2","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"3–4"},{"comunidad":"Castilla y León","provincia":"Zamora","diputados":3,"censo_2026":162251,"cera_2026":24104,"pp_2023":2,"psoe_2023":1,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":1,"vox_base":0,"sumar_base":0,"reg_base":0,"pp_prop":2,"psoe_prop":1,"vox_prop":0,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"Vox","vuelco_pts":0.34,"votos_vuelco":379,"ppvox_p5":2,"ppvox_p95":2,"pp_prev":1,"psoe_prev":1,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"1–2","psoe_rng":"1","vox_rng":"0–1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"2"},{"comunidad":"Aragón","provincia":"Huesca","diputados":3,"censo_2026":175954,"cera_2026":9675,"pp_2023":2,"psoe_2023":1,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":1,"psoe_base":1,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":1,"psoe_prop":1,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"Vox","compite":"PP","vuelco_pts":1.12,"votos_vuelco":1371,"ppvox_p5":2,"ppvox_p95":2,"pp_prev":1,"psoe_prev":1,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"1–2","psoe_rng":"1","vox_rng":"0–1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"2"},{"comunidad":"Aragón","provincia":"Teruel","diputados":3,"censo_2026":106251,"cera_2026":5891,"pp_2023":2,"psoe_2023":1,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":1,"psoe_base":1,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":1,"psoe_prop":1,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"Vox","compite":"PP","vuelco_pts":2.32,"votos_vuelco":1734,"ppvox_p5":2,"ppvox_p95":2,"pp_prev":1,"psoe_prev":1,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"1","psoe_rng":"1","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"2"},{"comunidad":"Aragón","provincia":"Zaragoza","diputados":7,"censo_2026":760968,"cera_2026":30903,"pp_2023":3,"psoe_2023":2,"vox_2023":1,"sumar_2023":1,"reg_2023":0,"pp_base":3,"psoe_base":2,"vox_base":2,"sumar_base":0,"reg_base":0,"pp_prop":3,"psoe_prop":2,"vox_prop":2,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"PSOE","vuelco_pts":3.3,"votos_vuelco":17517,"ppvox_p5":4,"ppvox_p95":5,"pp_prev":3,"psoe_prev":2,"vox_prev":2,"sumar_prev":0,"reg_prev":0,"pp_rng":"3","psoe_rng":"2","vox_rng":"2","sumar_rng":"0","reg_rng":"0","ppvox_rng":"5"},{"comunidad":"Baleares","provincia":"Baleares","diputados":8,"censo_2026":870718,"cera_2026":42115,"pp_2023":3,"psoe_2023":3,"vox_2023":1,"sumar_2023":1,"reg_2023":0,"pp_base":3,"psoe_base":2,"vox_base":2,"sumar_base":1,"reg_base":0,"pp_prop":3,"psoe_prop":3,"vox_prop":2,"sumar_prop":0,"reg_prop":0,"ultimo":"PSOE","compite":"Sumar","vuelco_pts":0.05,"votos_vuelco":248,"ppvox_p5":5,"ppvox_p95":6,"pp_prev":3,"psoe_prev":3,"vox_prev":2,"sumar_prev":0,"reg_prev":0,"pp_rng":"3","psoe_rng":"2–3","vox_rng":"2","sumar_rng":"0–1","reg_rng":"0","ppvox_rng":"5–6"},{"comunidad":"Canarias","provincia":"Las Palmas","diputados":8,"censo_2026":939211,"cera_2026":66235,"pp_2023":3,"psoe_2023":3,"vox_2023":1,"sumar_2023":1,"reg_2023":0,"pp_base":3,"psoe_base":3,"vox_base":2,"sumar_base":0,"reg_base":0,"pp_prop":3,"psoe_prop":3,"vox_prop":2,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"Vox","vuelco_pts":0.74,"votos_vuelco":3978,"ppvox_p5":4,"ppvox_p95":5,"pp_prev":2,"psoe_prev":4,"vox_prev":2,"sumar_prev":0,"reg_prev":0,"pp_rng":"2–3","psoe_rng":"3","vox_rng":"2–3","sumar_rng":"0","reg_rng":"0–1","ppvox_rng":"4–5"},{"comunidad":"Canarias","provincia":"Santa Cruz de Tenerife","diputados":7,"censo_2026":927138,"cera_2026":125100,"pp_2023":3,"psoe_2023":3,"vox_2023":0,"sumar_2023":0,"reg_2023":1,"pp_base":3,"psoe_base":2,"vox_base":1,"sumar_base":0,"reg_base":1,"pp_prop":3,"psoe_prop":2,"vox_prop":1,"sumar_prop":0,"reg_prop":1,"ultimo":"PP","compite":"PSOE","vuelco_pts":1.65,"votos_vuelco":8921,"ppvox_p5":3,"ppvox_p95":4,"pp_prev":2,"psoe_prev":3,"vox_prev":1,"sumar_prev":0,"reg_prev":1,"pp_rng":"2–3","psoe_rng":"2–3","vox_rng":"1","sumar_rng":"0","reg_rng":"1–2","ppvox_rng":"3–4"},{"comunidad":"Cantabria","provincia":"Cantabria","diputados":5,"censo_2026":523083,"cera_2026":49873,"pp_2023":2,"psoe_2023":2,"vox_2023":1,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":2,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":2,"psoe_prop":2,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"PSOE","compite":"PP","vuelco_pts":1.86,"votos_vuelco":6741,"ppvox_p5":3,"ppvox_p95":4,"pp_prev":2,"psoe_prev":2,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"2–3","psoe_rng":"1–2","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"3–4"},{"comunidad":"Cataluña","provincia":"Barcelona","diputados":32,"censo_2026":4398757,"cera_2026":265687,"pp_2023":5,"psoe_2023":13,"vox_2023":2,"sumar_2023":5,"reg_2023":7,"pp_base":4,"psoe_base":11,"vox_base":4,"sumar_base":4,"reg_base":9,"pp_prop":5,"psoe_prop":12,"vox_prop":4,"sumar_prop":3,"reg_prop":8,"ultimo":"PP","compite":"PSOE","vuelco_pts":0.52,"votos_vuelco":9405,"ppvox_p5":7,"ppvox_p95":11,"pp_prev":4,"psoe_prev":13,"vox_prev":4,"sumar_prev":3,"reg_prev":8,"pp_rng":"4–5","psoe_rng":"11–13","vox_rng":"4–5","sumar_rng":"2–3","reg_rng":"8","ppvox_rng":"8–10"},{"comunidad":"Cataluña","provincia":"Girona","diputados":6,"censo_2026":575269,"cera_2026":30162,"pp_2023":0,"psoe_2023":2,"vox_2023":0,"sumar_2023":1,"reg_2023":3,"pp_base":0,"psoe_base":2,"vox_base":1,"sumar_base":0,"reg_base":3,"pp_prop":0,"psoe_prop":2,"vox_prop":1,"sumar_prop":0,"reg_prop":3,"ultimo":"Junts","compite":"PP","vuelco_pts":0.19,"votos_vuelco":698,"ppvox_p5":0,"ppvox_p95":2,"pp_prev":0,"psoe_prev":3,"vox_prev":1,"sumar_prev":0,"reg_prev":2,"pp_rng":"0–1","psoe_rng":"2","vox_rng":"0–1","sumar_rng":"0","reg_rng":"2–3","ppvox_rng":"1–2"},{"comunidad":"Cataluña","provincia":"Lleida","diputados":4,"censo_2026":326300,"cera_2026":21909,"pp_2023":0,"psoe_2023":2,"vox_2023":0,"sumar_2023":0,"reg_2023":2,"pp_base":0,"psoe_base":2,"vox_base":0,"sumar_base":0,"reg_base":2,"pp_prop":0,"psoe_prop":2,"vox_prop":0,"sumar_prop":0,"reg_prop":2,"ultimo":"PSOE","compite":"PP","vuelco_pts":0.52,"votos_vuelco":1069,"ppvox_p5":0,"ppvox_p95":1,"pp_prev":0,"psoe_prev":2,"vox_prev":0,"sumar_prev":0,"reg_prev":2,"pp_rng":"0–1","psoe_rng":"1–2","vox_rng":"0","sumar_rng":"0","reg_rng":"2–3","ppvox_rng":"0–1"},{"comunidad":"Cataluña","provincia":"Tarragona","diputados":6,"censo_2026":626161,"cera_2026":26598,"pp_2023":1,"psoe_2023":2,"vox_2023":0,"sumar_2023":1,"reg_2023":2,"pp_base":1,"psoe_base":2,"vox_base":1,"sumar_base":0,"reg_base":2,"pp_prop":1,"psoe_prop":2,"vox_prop":1,"sumar_prop":0,"reg_prop":2,"ultimo":"Junts","compite":"PSOE","vuelco_pts":0.65,"votos_vuelco":2644,"ppvox_p5":1,"ppvox_p95":3,"pp_prev":1,"psoe_prev":3,"vox_prev":1,"sumar_prev":0,"reg_prev":1,"pp_rng":"1","psoe_rng":"2–3","vox_rng":"1","sumar_rng":"0","reg_rng":"1–2","ppvox_rng":"2"},{"comunidad":"Extremadura","provincia":"Badajoz","diputados":5,"censo_2026":552081,"cera_2026":13090,"pp_2023":2,"psoe_2023":2,"vox_2023":1,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":2,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":2,"psoe_prop":2,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"PSOE","compite":"PP","vuelco_pts":6.62,"votos_vuelco":25982,"ppvox_p5":3,"ppvox_p95":3,"pp_prev":2,"psoe_prev":2,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"2","psoe_rng":"2","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"3"},{"comunidad":"Extremadura","provincia":"Cáceres","diputados":4,"censo_2026":339508,"cera_2026":18535,"pp_2023":2,"psoe_2023":2,"vox_2023":0,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":1,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":2,"psoe_prop":1,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"PSOE","vuelco_pts":0.7,"votos_vuelco":1686,"ppvox_p5":2,"ppvox_p95":3,"pp_prev":1,"psoe_prev":2,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"1–2","psoe_rng":"1–2","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"2–3"},{"comunidad":"Murcia","provincia":"Murcia","diputados":10,"censo_2026":1144308,"cera_2026":44626,"pp_2023":4,"psoe_2023":3,"vox_2023":2,"sumar_2023":1,"reg_2023":0,"pp_base":4,"psoe_base":2,"vox_base":4,"sumar_base":0,"reg_base":0,"pp_prop":4,"psoe_prop":2,"vox_prop":4,"sumar_prop":0,"reg_prop":0,"ultimo":"Vox","compite":"PP","vuelco_pts":1.57,"votos_vuelco":12604,"ppvox_p5":7,"ppvox_p95":8,"pp_prev":4,"psoe_prev":2,"vox_prev":4,"sumar_prev":0,"reg_prev":0,"pp_rng":"4–5","psoe_rng":"2","vox_rng":"3–4","sumar_rng":"0","reg_rng":"0","ppvox_rng":"8"},{"comunidad":"Navarra","provincia":"Navarra","diputados":5,"censo_2026":537194,"cera_2026":36781,"pp_2023":1,"psoe_2023":2,"vox_2023":0,"sumar_2023":0,"reg_2023":2,"pp_base":1,"psoe_base":2,"vox_base":0,"sumar_base":0,"reg_base":2,"pp_prop":1,"psoe_prop":2,"vox_prop":0,"sumar_prop":0,"reg_prop":2,"ultimo":"PSOE","compite":"EH Bildu","vuelco_pts":1.73,"votos_vuelco":6101,"ppvox_p5":1,"ppvox_p95":2,"pp_prev":1,"psoe_prev":2,"vox_prev":0,"sumar_prev":0,"reg_prev":2,"pp_rng":"1","psoe_rng":"1–2","vox_rng":"0","sumar_rng":"0","reg_rng":"2–3","ppvox_rng":"1"},{"comunidad":"Comunidad Valenciana","provincia":"Alicante","diputados":12,"censo_2026":1359229,"cera_2026":55464,"pp_2023":5,"psoe_2023":4,"vox_2023":2,"sumar_2023":1,"reg_2023":0,"pp_base":5,"psoe_base":3,"vox_base":3,"sumar_base":1,"reg_base":0,"pp_prop":5,"psoe_prop":4,"vox_prop":3,"sumar_prop":0,"reg_prop":0,"ultimo":"PP","compite":"Sumar","vuelco_pts":0.02,"votos_vuelco":205,"ppvox_p5":7,"ppvox_p95":9,"pp_prev":4,"psoe_prev":4,"vox_prev":3,"sumar_prev":1,"reg_prev":0,"pp_rng":"4–5","psoe_rng":"3–4","vox_rng":"3–4","sumar_rng":"0–1","reg_rng":"0","ppvox_rng":"7–8"},{"comunidad":"Comunidad Valenciana","provincia":"Castellón","diputados":5,"censo_2026":448196,"cera_2026":13116,"pp_2023":2,"psoe_2023":2,"vox_2023":1,"sumar_2023":0,"reg_2023":0,"pp_base":2,"psoe_base":2,"vox_base":1,"sumar_base":0,"reg_base":0,"pp_prop":2,"psoe_prop":2,"vox_prop":1,"sumar_prop":0,"reg_prop":0,"ultimo":"PSOE","compite":"Vox","vuelco_pts":2.09,"votos_vuelco":6644,"ppvox_p5":3,"ppvox_p95":4,"pp_prev":2,"psoe_prev":2,"vox_prev":1,"sumar_prev":0,"reg_prev":0,"pp_rng":"2","psoe_rng":"1–2","vox_rng":"1","sumar_rng":"0","reg_rng":"0","ppvox_rng":"3–4"},{"comunidad":"Comunidad Valenciana","provincia":"Valencia","diputados":16,"censo_2026":2067797,"cera_2026":83234,"pp_2023":6,"psoe_2023":5,"vox_2023":2,"sumar_2023":3,"reg_2023":0,"pp_base":5,"psoe_base":5,"vox_base":4,"sumar_base":2,"reg_base":0,"pp_prop":6,"psoe_prop":5,"vox_prop":4,"sumar_prop":1,"reg_prop":0,"ultimo":"PP","compite":"PSOE","vuelco_pts":1.65,"votos_vuelco":23930,"ppvox_p5":9,"ppvox_p95":11,"pp_prev":5,"psoe_prev":6,"vox_prev":4,"sumar_prev":1,"reg_prev":0,"pp_rng":"5–6","psoe_rng":"5","vox_rng":"4–5","sumar_rng":"1–2","reg_rng":"0","ppvox_rng":"9–10"}],"rangos":[{"ambito":"Total","nombre":"España","diputados":350,"pp":"119–137","psoe":"103–123","vox":"61–77","sumar":"5–14","regionalistas":"22–41","ppvox":"187–207"},{"ambito":"Comunidad","nombre":"Madrid","diputados":38,"pp":"14–17","psoe":"9–11","vox":"8–10","sumar":"2–4","regionalistas":"0","ppvox":"23–26"},{"ambito":"Comunidad","nombre":"Asturias","diputados":7,"pp":"2–3","psoe":"2–3","vox":"1–2","sumar":"0","regionalistas":"0","ppvox":"4–5"},{"ambito":"Comunidad","nombre":"País Vasco","diputados":18,"pp":"1–3","psoe":"4–7","vox":"0","sumar":"0","regionalistas":"9–13","ppvox":"1–3"},{"ambito":"Comunidad","nombre":"Andalucía","diputados":60,"pp":"22–26","psoe":"18–22","vox":"14–17","sumar":"0–2","regionalistas":"0","ppvox":"37–41"},{"ambito":"Comunidad","nombre":"Ceuta","diputados":1,"pp":"0–1","psoe":"0","vox":"0–1","sumar":"0","regionalistas":"0","ppvox":"1"},{"ambito":"Comunidad","nombre":"Melilla","diputados":1,"pp":"1","psoe":"0","vox":"0","sumar":"0","regionalistas":"0","ppvox":"1"},{"ambito":"Comunidad","nombre":"La Rioja","diputados":4,"pp":"2–3","psoe":"1–2","vox":"0–1","sumar":"0","regionalistas":"0","ppvox":"2–3"},{"ambito":"Comunidad","nombre":"Castilla-La Mancha","diputados":21,"pp":"8–9","psoe":"6–7","vox":"5–7","sumar":"0","regionalistas":"0","ppvox":"14–15"},{"ambito":"Comunidad","nombre":"Galicia","diputados":23,"pp":"12–15","psoe":"6–9","vox":"0–1","sumar":"0–1","regionalistas":"0–2","ppvox":"12–15"},{"ambito":"Comunidad","nombre":"Castilla y León","diputados":31,"pp":"13–17","psoe":"9–11","vox":"5–8","sumar":"0","regionalistas":"0","ppvox":"20–22"},{"ambito":"Comunidad","nombre":"Aragón","diputados":13,"pp":"5–6","psoe":"4–5","vox":"3–4","sumar":"0","regionalistas":"0","ppvox":"8–9"},{"ambito":"Comunidad","nombre":"Baleares","diputados":8,"pp":"3–4","psoe":"2–3","vox":"2","sumar":"0–1","regionalistas":"0","ppvox":"5–6"},{"ambito":"Comunidad","nombre":"Canarias","diputados":15,"pp":"4–6","psoe":"5–6","vox":"2–4","sumar":"0","regionalistas":"1–3","ppvox":"7–9"},{"ambito":"Comunidad","nombre":"Cantabria","diputados":5,"pp":"2–3","psoe":"1–2","vox":"1","sumar":"0","regionalistas":"0","ppvox":"3–4"},{"ambito":"Comunidad","nombre":"Cataluña","diputados":48,"pp":"5–8","psoe":"15–21","vox":"5–7","sumar":"2–4","regionalistas":"10–20","ppvox":"9–15"},{"ambito":"Comunidad","nombre":"Extremadura","diputados":9,"pp":"3–4","psoe":"3–4","vox":"2","sumar":"0","regionalistas":"0","ppvox":"5–6"},{"ambito":"Comunidad","nombre":"Murcia","diputados":10,"pp":"4–5","psoe":"2–3","vox":"3–4","sumar":"0","regionalistas":"0","ppvox":"7–8"},{"ambito":"Comunidad","nombre":"Navarra","diputados":5,"pp":"1","psoe":"1–2","vox":"0","sumar":"0","regionalistas":"2–3","ppvox":"1"},{"ambito":"Comunidad","nombre":"Comunidad Valenciana","diputados":33,"pp":"11–13","psoe":"9–12","vox":"7–10","sumar":"1–3","regionalistas":"0","ppvox":"19–22"}]};
+var P=DATA.prov, R=DATA.rangos;
+var PARTIES=[
+ {k:"pp",n:"PP",c:"var(--pp)"},{k:"psoe",n:"PSOE",c:"var(--psoe)"},{k:"vox",n:"Vox",c:"var(--vox)"},
+ {k:"sumar",n:"Sumar",c:"var(--sumar)"},{k:"reg",n:"Regionalistas",c:"var(--reg)"}];
+// 24-nov-2026 00:00 (hora de Madrid, CET = UTC+1)
+var VEDA_FROM=Date.UTC(2026,10,23,23,0,0);
+var vedado=Date.now()>=VEDA_FROM || location.hash==="#veda";
+var CUT="15 de noviembre de 2026";
+
+function $(id){return document.getElementById(id)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function fmt(n,d){return Number(n).toLocaleString("es-ES",{minimumFractionDigits:d||0,maximumFractionDigits:d||0})}
+function slug(s){return "p-"+s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
+function rng(v){return String(v).replace("–"," a ")}
+
+if(vedado){$("veda").classList.remove("hidden");$("t-ajustados").classList.add("hidden");$("t-espana").classList.add("hidden")}
+
+// selector
+var sel=$("sel"),groups={};
+P.forEach(function(r,i){(groups[r.comunidad]=groups[r.comunidad]||[]).push(i)});
+Object.keys(groups).forEach(function(g){
+  var og=document.createElement("optgroup");og.label=g;
+  groups[g].forEach(function(i){var o=document.createElement("option");o.value=i;o.textContent=P[i].provincia;og.appendChild(o)});
+  sel.appendChild(og);
+});
+var bySlug={};P.forEach(function(r,i){bySlug[slug(r.provincia)]=i});
+
+function seatsRow(label,vals,total,extra){
+  var h='<div class="seatrow"><div class="lbl"><span>'+label+'</span><span>'+(extra||"")+'</span></div><div class="seats">';
+  var n=0;
+  PARTIES.forEach(function(p){for(var j=0;j<vals[p.k];j++){h+='<span class="seat" title="'+p.n+'" style="background:'+p.c+'"></span>';n++}});
+  while(n<total){h+='<span class="seat empty"></span>';n++}
+  return h+"</div></div>";
+}
+function vals(r,suf){var o={};PARTIES.forEach(function(p){o[p.k]=r[p.k+"_"+suf]});return o}
+
+function band(x){
+  if(x<0.5)return["a","Muy en el aire"];
+  if(x<1.5)return["b","Ajustado"];
+  if(x<3)return["c","Algo de margen"];
+  return["d","Estable"];
+}
+
+function showProv(i){
+  var r=P[i],h="";
+  var v23=vals(r,"2023"),vh=vals(r,"prop");
+  var tot23=0;PARTIES.forEach(function(p){tot23+=v23[p.k]});
+  h+='<div class="card"><h2>'+esc(r.provincia)+'</h2><div class="note">'+esc(r.comunidad)+' · '+r.diputados+' diputados en juego</div>';
+  if(tot23!==r.diputados){h+='<div class="note">En 2023 esta provincia repartía '+tot23+' diputados; ahora reparte '+r.diputados+'.</div>'}
+  h+=seatsRow("Resultado de 2023",v23,Math.max(r.diputados,tot23));
+  if(!vedado){h+=seatsRow("Escenario central hoy",vh,r.diputados)}
+  h+='<table style="margin-top:10px"><thead><tr><th>Partido</th><th>2023</th>'+(vedado?"":"<th>Hoy</th><th>Horquilla</th>")+'</tr></thead><tbody>';
+  PARTIES.forEach(function(p){
+    var a=v23[p.k],b=vh[p.k],rg=r[p.k+"_rng"];
+    if(a===0&&b===0&&String(rg)==="0")return;
+    h+='<tr><td><span class="dot" style="background:'+p.c+'"></span>'+p.n+'</td><td>'+a+'</td>'+(vedado?"":'<td><b>'+b+'</b></td><td>'+rng(rg)+'</td>')+'</tr>';
+  });
+  h+='</tbody></table>';
+  if(!vedado)h+='<p class="note" style="margin:8px 0 0">La horquilla recoge los resultados con al menos un 20 % de probabilidad en 4.000 simulaciones. Cuando hay duda, damos un rango.</p>';
+  h+='</div>';
+
+  if(!vedado){
+    var b=band(r.vuelco_pts),pct=Math.max(4,Math.min(100,(r.vuelco_pts/6)*100));
+    h+='<div class="card"><h2>El escaño en el aire</h2>';
+    h+='<span class="pill '+b[0]+'">'+b[1]+'</span>';
+    h+='<p class="read">El último escaño lo tiene hoy <b>'+esc(r.ultimo)+'</b> y lo persigue <b>'+esc(r.compite)+'</b>. Se movería con unos <b>'+fmt(r.vuelco_pts,2)+' puntos de voto</b> (en torno a '+fmt(r.votos_vuelco)+' votos).</p>';
+    h+='<div class="gauge" aria-hidden="true"><i style="width:'+pct+'%"></i></div><div class="gscale"><span>0 · muy en el aire</span><span>6 o más · estable</span></div>';
+    h+='<p class="note" style="margin:10px 0 0">Margen del último escaño en el escenario central. Es un modelo, no una encuesta de la provincia.</p></div>';
+    h+='<div class="card"><h2>PP + Vox</h2><p class="read" style="margin-top:0">Entre <b>'+r.ppvox_p5+'</b> y <b>'+r.ppvox_p95+'</b> diputados sumados en el 90 % de las simulaciones.</p></div>';
+  }
+  $("prov").innerHTML=h;
+}
+
+function showRank(all){
+  var idx=P.map(function(r,i){return i}).sort(function(a,b){return P[a].vuelco_pts-P[b].vuelco_pts});
+  var list=all?idx:idx.slice(0,12),h="";
+  list.forEach(function(i,k){
+    var r=P[i];
+    h+='<li data-i="'+i+'"><span class="n">'+(k+1)+'</span><span class="t"><b>'+esc(r.provincia)+'</b><span>'+esc(r.ultimo)+' tiene el último escaño · lo persigue '+esc(r.compite)+'</span></span><span class="v">'+fmt(r.vuelco_pts,2)+'</span></li>';
+  });
+  $("rank").innerHTML=h;
+  $("more").classList.toggle("hidden",all);
+}
+
+function showEsp(){
+  var h='<h2>España</h2><p class="note" style="margin:0 0 8px">Horquilla de diputados entre el percentil 10 y el 90 de 4.000 simulaciones del escenario central.</p>';
+  var cols=[["pp","PP"],["psoe","PSOE"],["vox","Vox"],["sumar","Sumar"],["regionalistas","Reg."],["ppvox","PP+Vox"]];
+  h+='<table><thead><tr><th>Ámbito</th>'+cols.map(function(c){return"<th>"+c[1]+"</th>"}).join("")+'</tr></thead><tbody>';
+  R.forEach(function(r){
+    h+='<tr><td>'+(r.ambito==="Total"?"<b>España</b>":esc(r.nombre))+'<div class="note">'+r.diputados+' dip.</div></td>'+cols.map(function(c){return"<td>"+String(r[c[0]]).replace("–","-")+"</td>"}).join("")+'</tr>';
+  });
+  h+='</tbody></table>';
+  $("esp").innerHTML=h;
+}
+
+function setView(v){
+  ["provincia","ajustados","espana"].forEach(function(x){
+    $("v-"+x).classList.toggle("hidden",x!==v);
+    $("t-"+x).setAttribute("aria-selected",x===v?"true":"false");
+  });
+}
+function go(v){
+  if(vedado&&v!=="provincia")v="provincia";
+  setView(v);
+  try{history.replaceState(null,"","#"+v)}catch(e){}
+}
+function selectProv(i){sel.value=i;showProv(i);try{history.replaceState(null,"","#"+slug(P[i].provincia))}catch(e){}}
+
+document.querySelectorAll(".tabs button").forEach(function(b){b.addEventListener("click",function(){go(b.dataset.v)})});
+sel.addEventListener("change",function(){selectProv(+sel.value)});
+$("more").addEventListener("click",function(){showRank(true)});
+$("rank").addEventListener("click",function(e){
+  var li=e.target.closest("li");if(!li)return;
+  setView("provincia");selectProv(+li.dataset.i);window.scrollTo(0,0);
+});
+
+$("foot").innerHTML=vedado
+  ?'Experimento personal de análisis de datos. Resultados de 2023 oficiales. No es una encuesta ni una recomendación de voto.'
+  :'Experimento personal de análisis de datos, sin relación con ningún partido ni institución. No es una encuesta ni una recomendación de voto: es una estimación con margen de error, hecha con la media de sondeos publicados hasta el '+CUT+' y resultados oficiales de 2023. Los resultados se actualizan hasta el 23 de noviembre.';
+
+showRank(false);showEsp();
+var h=location.hash.replace("#",""),start=0;
+if(bySlug[h]!==undefined){start=bySlug[h]}
+else{start=bySlug["p-madrid"]!==undefined?bySlug["p-madrid"]:0}
+selectProv(start);
+if(h==="ajustados"||h==="espana")go(h);
+})();
+</script>
+</body>
+</html>
