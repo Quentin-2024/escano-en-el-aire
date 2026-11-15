@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>29N: el escaño en el aire</title>
+<meta name="description" content="Elige tu provincia y mira qué se juega el 29N: escaños, horquillas y el escaño en el aire.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="29N: el escaño en el aire">
+<meta property="og:title" content="29N: el escaño en el aire">
+<meta property="og:description" content="Elige tu provincia y mira qué se juega el 29N: escaños, horquillas y el escaño en el aire.">
+<link rel="canonical" href="__BASE__/">
+<meta property="og:url" content="__BASE__/">
+<meta property="og:image" content="__BASE__/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="29N: el escaño en el aire. Elige tu provincia y mira qué se juega.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="29N: el escaño en el aire">
+<meta name="twitter:description" content="Elige tu provincia y mira qué se juega el 29N.">
+<meta name="twitter:image" content="__BASE__/og.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314161a'/%3E%3Crect x='14' y='14' width='16' height='16' rx='3' fill='%23fff'/%3E%3Crect x='34' y='14' width='16' height='16' rx='3' fill='%23888'/%3E%3Crect x='14' y='34' width='16' height='16' rx='3' fill='%23888'/%3E%3Crect x='34' y='34' width='16' height='16' rx='3' fill='%23888'/%3E%3C/svg%3E">
+
+<style>
+:root{--bg:#f5f3ee;--ink:#14161a;--mut:#5d6470;--card:#fff;--line:#e2ded4;--acc:#14161a;
+--pp:#1d6fd1;--psoe:#d8262c;--vox:#5da61e;--sumar:#c2477f;--reg:#9a7a3c;--warn:#fff4d6;--warnb:#e6c875}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+#app{max-width:760px;margin:0 auto;padding:18px 14px 40px}
+h1{font:700 clamp(26px,7vw,38px)/1.1 Georgia,"Times New Roman",serif;margin:6px 0 8px;letter-spacing:-.01em}
+h2{font:700 20px/1.2 Georgia,serif;margin:0 0 6px}
+.lead{color:var(--mut);margin:0 0 14px}
+.tag{display:inline-block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+.banner{background:var(--warn);border:1px solid var(--warnb);border-radius:10px;padding:10px 12px;margin:0 0 14px;font-size:14px}
+.tabs{display:flex;gap:6px;margin:0 0 14px;flex-wrap:wrap}
+.tabs button{flex:1 1 auto;min-width:0;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px 12px;border-radius:999px;font:600 14px system-ui;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--acc);color:#fff;border-color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:0 0 12px}
+select{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;font:16px system-ui;background:#fff;color:var(--ink)}
+label{display:block;font-weight:600;margin:0 0 6px}
+.seatrow{margin:10px 0 2px}
+.seatrow .lbl{font-size:13px;color:var(--mut);margin:0 0 4px;display:flex;justify-content:space-between;gap:8px}
+.seats{display:flex;flex-wrap:wrap;gap:3px}
+.seat{width:16px;height:16px;border-radius:3px;display:inline-block}
+.seat.empty{background:#ece9e0}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:7px 4px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+th{font-size:12px;color:var(--mut);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px}
+.big{font:700 30px/1 Georgia,serif}
+.gauge{height:12px;background:#ece9e0;border-radius:999px;overflow:hidden;margin:8px 0 4px}
+.gauge i{display:block;height:100%;background:var(--acc);border-radius:999px}
+.gscale{display:flex;justify-content:space-between;font-size:12px;color:var(--mut)}
+.pill{display:inline-block;padding:2px 9px;border-radius:999px;font:600 12px system-ui;background:var(--acc);color:#fff}
+.pill.a{background:#b3261e}.pill.b{background:#c97a00}.pill.c{background:#4b6b8a}.pill.d{background:#6b7280}
+ol.rank{list-style:none;margin:0;padding:0}
+ol.rank li{display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid var(--line);cursor:pointer}
+ol.rank li:hover{background:#faf8f3}
+ol.rank .n{width:24px;color:var(--mut);font-size:13px}
+ol.rank .t{flex:1;min-width:0}
+ol.rank .t b{display:block}
+ol.rank .t span{font-size:13px;color:var(--mut)}
+ol.rank .v{font:700 16px Georgia,serif;white-space:nowrap}
+.btn{border:1px solid var(--acc);background:var(--card);padding:10px 14px;border-radius:10px;font:600 14px system-ui;cursor:pointer;margin-top:10px}
+.note{font-size:13px;color:var(--mut)}
+.foot{font-size:12px;color:var(--mut);margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
+.hidden{display:none}
+.read{font-size:16px;margin:10px 0 0}
+</style>
+</head>
+<body>
+<div id="app">
+  <span class="tag">Elecciones generales · 29 de noviembre de 2026</span>
+  <h1>29N: el escaño en el aire</h1>
+  <p class="lead">Elige una provincia y mira cuántos diputados reparte el modelo, con su horquilla, y qué escaño está en el aire.</p>
+  <div id="veda" class="banner hidden"><b>Veda de sondeos.</b> Del 24 al 29 de noviembre la ley prohíbe publicar sondeos (art. 69.7 de la LOREG). Esta página solo muestra los resultados de 2023.</div>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" id="t-provincia" aria-selected="true" data-v="provincia">Mi provincia</button>
+    <button role="tab" id="t-ajustados" aria-selected="false" data-v="ajustados">Los más ajustados</button>
+    <button role="tab" id="t-espana" aria-selected="false" data-v="espana">España</button>
+  </div>
+
+  <section id="v-provincia">
+    <div class="card">
+      <label for="sel">Tu provincia</label>
+      <select id="sel"></select>
+    </div>
+    <div id="prov"></div>
+  </section>
+
+  <section id="v-ajustados" class="hidden">
+    <div class="card">
+      <h2>Los escaños más ajustados</h2>
+      <p class="note" style="margin:0 0 8px">Ordenadas por el margen del último escaño: cuantos menos puntos de voto lo separan de otro partido, más "en el aire". Toca una provincia para verla.</p>
+      <ol class="rank" id="rank"></ol>
+      <button class="btn" id="more">Ver todas</button>
+    </div>
+  </section>
+
+  <section id="v-espana" class="hidden">
+    <div class="card" id="esp"></div>
+  </section>
+
+  <p class="foot" id="foot"></p>
+</div>
+<script>
+(function(){
+"use strict";
+var DATA=__DATA__;
+var P=DATA.prov, R=DATA.rangos;
+var PARTIES=[
+ {k:"pp",n:"PP",c:"var(--pp)"},{k:"psoe",n:"PSOE",c:"var(--psoe)"},{k:"vox",n:"Vox",c:"var(--vox)"},
+ {k:"sumar",n:"Sumar",c:"var(--sumar)"},{k:"reg",n:"Regionalistas",c:"var(--reg)"}];
+// 24-nov-2026 00:00 (hora de Madrid, CET = UTC+1)
+var VEDA_FROM=Date.UTC(2026,10,23,23,0,0);
+var vedado=Date.now()>=VEDA_FROM || location.hash==="#veda";
+var CUT="15 de noviembre de 2026";
+
+function $(id){return document.getElementById(id)}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function fmt(n,d){return Number(n).toLocaleString("es-ES",{minimumFractionDigits:d||0,maximumFractionDigits:d||0})}
+function slug(s){return "p-"+s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}
+function rng(v){return String(v).replace("–"," a ")}
+
+if(vedado){$("veda").classList.remove("hidden");$("t-ajustados").classList.add("hidden");$("t-espana").classList.add("hidden")}
+
+// selector
+var sel=$("sel"),groups={};
+P.forEach(function(r,i){(groups[r.comunidad]=groups[r.comunidad]||[]).push(i)});
+Object.keys(groups).forEach(function(g){
+  var og=document.createElement("optgroup");og.label=g;
+  groups[g].forEach(function(i){var o=document.createElement("option");o.value=i;o.textContent=P[i].provincia;og.appendChild(o)});
+  sel.appendChild(og);
+});
+var bySlug={};P.forEach(function(r,i){bySlug[slug(r.provincia)]=i});
+
+function seatsRow(label,vals,total,extra){
+  var h='<div class="seatrow"><div class="lbl"><span>'+label+'</span><span>'+(extra||"")+'</span></div><div class="seats">';
+  var n=0;
+  PARTIES.forEach(function(p){for(var j=0;j<vals[p.k];j++){h+='<span class="seat" title="'+p.n+'" style="background:'+p.c+'"></span>';n++}});
+  while(n<total){h+='<span class="seat empty"></span>';n++}
+  return h+"</div></div>";
+}
+function vals(r,suf){var o={};PARTIES.forEach(function(p){o[p.k]=r[p.k+"_"+suf]});return o}
+
+function band(x){
+  if(x<0.5)return["a","Muy en el aire"];
+  if(x<1.5)return["b","Ajustado"];
+  if(x<3)return["c","Algo de margen"];
+  return["d","Estable"];
+}
+
+function showProv(i){
+  var r=P[i],h="";
+  var v23=vals(r,"2023"),vh=vals(r,"prop");
+  var tot23=0;PARTIES.forEach(function(p){tot23+=v23[p.k]});
+  h+='<div class="card"><h2>'+esc(r.provincia)+'</h2><div class="note">'+esc(r.comunidad)+' · '+r.diputados+' diputados en juego</div>';
+  if(tot23!==r.diputados){h+='<div class="note">En 2023 esta provincia repartía '+tot23+' diputados; ahora reparte '+r.diputados+'.</div>'}
+  h+=seatsRow("Resultado de 2023",v23,Math.max(r.diputados,tot23));
+  if(!vedado){h+=seatsRow("Escenario central hoy",vh,r.diputados)}
+  h+='<table style="margin-top:10px"><thead><tr><th>Partido</th><th>2023</th>'+(vedado?"":"<th>Hoy</th><th>Horquilla</th>")+'</tr></thead><tbody>';
+  PARTIES.forEach(function(p){
+    var a=v23[p.k],b=vh[p.k],rg=r[p.k+"_rng"];
+    if(a===0&&b===0&&String(rg)==="0")return;
+    h+='<tr><td><span class="dot" style="background:'+p.c+'"></span>'+p.n+'</td><td>'+a+'</td>'+(vedado?"":'<td><b>'+b+'</b></td><td>'+rng(rg)+'</td>')+'</tr>';
+  });
+  h+='</tbody></table>';
+  if(!vedado)h+='<p class="note" style="margin:8px 0 0">La horquilla recoge los resultados con al menos un 20 % de probabilidad en 4.000 simulaciones. Cuando hay duda, damos un rango.</p>';
+  h+='</div>';
+
+  if(!vedado){
+    var b=band(r.vuelco_pts),pct=Math.max(4,Math.min(100,(r.vuelco_pts/6)*100));
+    h+='<div class="card"><h2>El escaño en el aire</h2>';
+    h+='<span class="pill '+b[0]+'">'+b[1]+'</span>';
+    h+='<p class="read">El último escaño lo tiene hoy <b>'+esc(r.ultimo)+'</b> y lo persigue <b>'+esc(r.compite)+'</b>. Se movería con unos <b>'+fmt(r.vuelco_pts,2)+' puntos de voto</b> (en torno a '+fmt(r.votos_vuelco)+' votos).</p>';
+    h+='<div class="gauge" aria-hidden="true"><i style="width:'+pct+'%"></i></div><div class="gscale"><span>0 · muy en el aire</span><span>6 o más · estable</span></div>';
+    h+='<p class="note" style="margin:10px 0 0">Margen del último escaño en el escenario central. Es un modelo, no una encuesta de la provincia.</p></div>';
+    h+='<div class="card"><h2>PP + Vox</h2><p class="read" style="margin-top:0">Entre <b>'+r.ppvox_p5+'</b> y <b>'+r.ppvox_p95+'</b> diputados sumados en el 90 % de las simulaciones.</p></div>';
+  }
+  $("prov").innerHTML=h;
+}
+
+function showRank(all){
+  var idx=P.map(function(r,i){return i}).sort(function(a,b){return P[a].vuelco_pts-P[b].vuelco_pts});
+  var list=all?idx:idx.slice(0,12),h="";
+  list.forEach(function(i,k){
+    var r=P[i];
+    h+='<li data-i="'+i+'"><span class="n">'+(k+1)+'</span><span class="t"><b>'+esc(r.provincia)+'</b><span>'+esc(r.ultimo)+' tiene el último escaño · lo persigue '+esc(r.compite)+'</span></span><span class="v">'+fmt(r.vuelco_pts,2)+'</span></li>';
+  });
+  $("rank").innerHTML=h;
+  $("more").classList.toggle("hidden",all);
+}
+
+function showEsp(){
+  var h='<h2>España</h2><p class="note" style="margin:0 0 8px">Horquilla de diputados entre el percentil 10 y el 90 de 4.000 simulaciones del escenario central.</p>';
+  var cols=[["pp","PP"],["psoe","PSOE"],["vox","Vox"],["sumar","Sumar"],["regionalistas","Reg."],["ppvox","PP+Vox"]];
+  h+='<table><thead><tr><th>Ámbito</th>'+cols.map(function(c){return"<th>"+c[1]+"</th>"}).join("")+'</tr></thead><tbody>';
+  R.forEach(function(r){
+    h+='<tr><td>'+(r.ambito==="Total"?"<b>España</b>":esc(r.nombre))+'<div class="note">'+r.diputados+' dip.</div></td>'+cols.map(function(c){return"<td>"+String(r[c[0]]).replace("–","-")+"</td>"}).join("")+'</tr>';
+  });
+  h+='</tbody></table>';
+  $("esp").innerHTML=h;
+}
+
+function setView(v){
+  ["provincia","ajustados","espana"].forEach(function(x){
+    $("v-"+x).classList.toggle("hidden",x!==v);
+    $("t-"+x).setAttribute("aria-selected",x===v?"true":"false");
+  });
+}
+function go(v){
+  if(vedado&&v!=="provincia")v="provincia";
+  setView(v);
+  try{history.replaceState(null,"","#"+v)}catch(e){}
+}
+function selectProv(i){sel.value=i;showProv(i);try{history.replaceState(null,"","#"+slug(P[i].provincia))}catch(e){}}
+
+document.querySelectorAll(".tabs button").forEach(function(b){b.addEventListener("click",function(){go(b.dataset.v)})});
+sel.addEventListener("change",function(){selectProv(+sel.value)});
+$("more").addEventListener("click",function(){showRank(true)});
+$("rank").addEventListener("click",function(e){
+  var li=e.target.closest("li");if(!li)return;
+  setView("provincia");selectProv(+li.dataset.i);window.scrollTo(0,0);
+});
+
+$("foot").innerHTML=vedado
+  ?'Experimento personal de análisis de datos. Resultados de 2023 oficiales. No es una encuesta ni una recomendación de voto.'
+  :'Experimento personal de análisis de datos, sin relación con ningún partido ni institución. No es una encuesta ni una recomendación de voto: es una estimación con margen de error, hecha con la media de sondeos publicados hasta el '+CUT+' y resultados oficiales de 2023. Los resultados se actualizan hasta el 23 de noviembre.';
+
+showRank(false);showEsp();
+var h=location.hash.replace("#",""),start=0;
+if(bySlug[h]!==undefined){start=bySlug[h]}
+else{start=bySlug["p-madrid"]!==undefined?bySlug["p-madrid"]:0}
+selectProv(start);
+if(h==="ajustados"||h==="espana")go(h);
+})();
+</script>
+</body>
+</html>
