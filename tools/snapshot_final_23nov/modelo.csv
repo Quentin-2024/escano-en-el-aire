@@ -1,0 +1,24 @@
+fecha,regla,escenario,descripcion,pp,psoe,vox,fa,podemos,lista_unida,erc,junts,bildu,pnv,bng,cca,upn,p_derecha_176,seguros,probables,en_aire,improbables
+2026-10-25,v1.1,S1,Regla fija (media recortada) · izq. dividida,134,109,64,10,2,no,8,7,7,5,2,1,1,99.6,308.0,28.0,12.0,2.0
+2026-10-25,v1.2,S1,Regla fija (media recortada) · izq. dividida,134,109,64,10,2,no,8,7,7,5,2,1,1,94.5,302.0,30.0,17.0,1.0
+2026-10-25,v1.2,S2,Regla fija · izq. alternativa unida,129,108,64,19,0,si,8,7,7,4,2,1,1,90.7,,,,
+2026-10-25,v1.2,S3,Sigma Dos 1-14 oct,131,104,68,14,2,no,8,7,7,5,2,1,1,95.7,,,,
+2026-10-25,v1.2,S4,Estrés CIS,92,154,63,9,2,no,8,7,7,4,2,1,1,14.3,,,,
+2026-10-25,v1.2,S5,"S1 + SALF 3,5 % en Madrid",133,109,64,10,2,no,8,7,7,5,2,1,1,94.2,,,,
+2026-11-07,v1.2,S1-7nov,Regla fija (media recortada 7-nov) · izq. dividida,130,109,70,10,0,no,8,7,7,5,2,1,1,95.6,301.0,29.0,17.0,3.0
+2026-11-07,v1.2,S2-7nov,Regla fija · FA+Podemos en lista unida,127,107,69,17,0,si,8,7,7,4,2,1,1,92.5,,,,
+2026-11-07,v1.2,S3-7nov,Sigma Dos 29-30 oct (post-Urda),135,103,69,10,0,no,8,8,7,6,2,1,1,96.9,,,,
+2026-11-07,v1.2,S4-7nov,Estrés CIS de octubre,91,154,64,9,2,no,8,7,7,4,2,1,1,14.2,,,,
+2026-11-07,v1.2,S5-7nov,"S1 + SALF 3,5 % en Madrid",130,108,70,10,0,no,8,7,7,5,2,1,1,95.3,,,,
+2026-11-07,v1.2,S6-7nov,"SW Demoscopia 6-nov (post-Puente, tracking)",118,127,63,12,0,no,8,7,7,4,2,1,1,57.8,,,,
+2026-11-16,v1.2,S1-16nov,Regla fija (media recortada 15-nov) · izq. dividida,133,113,66,8,0,no,8,7,7,4,2,1,1,94.1,302,29,16,3
+2026-11-16,v1.2,S2-16nov,Regla fija · FA+Podemos en lista unida,129,108,65,18,0,si,8,7,7,4,2,1,1,91.1,,,,
+2026-11-16,v1.2,S3-16nov,40dB 15-nov (PSOE supera el 30 %),130,124,63,3,0,no,8,7,7,4,2,1,1,85.3,,,,
+2026-11-16,v1.2,S4-16nov,Estrés CIS 12-nov,106,142,69,5,0,no,8,6,7,3,2,1,1,44.7,,,,
+2026-11-16,v1.2,S5-16nov,"S1 + SALF 3,5 % en Madrid",133,113,65,8,0,no,8,7,7,4,2,1,1,93.8,,,,
+2026-11-17,v3-r,S1-17nov,Central v3 recalculado (media ponderada 17-nov),132,112,67,7,0,no,11,5,8,4,2,1,1,98.4,,,,
+2026-11-17,v3-r,S2-17nov,v2 recalculado (privadas corregidas por 2023),119,126,69,7,0,no,10,5,7,3,2,1,1,86.8,,,,
+2026-11-17,v3-r,S3-17nov,Media de privadas 17-nov sin CIS ni SW,132,112,67,7,0,no,11,5,8,4,2,1,1,98.7,,,,
+2026-11-17,v3-r,S4-17nov,40dB 17-nov,132,123,62,5,0,no,10,4,7,3,2,1,1,91.2,,,,
+2026-11-17,v3-r,S5-17nov,"Central + Adelante Andalucía 1,7 %",131,111,66,7,0,no,11,5,8,4,2,1,1,97.5,,,,
+2026-11-17,v3-r,S6-17nov,Estrés CIS 12-nov,107,141,70,5,0,no,9,4,7,3,2,1,1,46.3,,,,
